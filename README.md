@@ -1,3 +1,4 @@
+
 # 📝 Guía Actualizada para Crear y Gestionar Repositorios Git desde la Consola con GitHub CLI
 
 ## 📌 Objetivo
@@ -6,11 +7,37 @@ Esta guía te enseña a **crear un repositorio en GitHub** desde la consola util
 
 ---
 
+## Índice
+
+1. [Instalación de Git y GitHub CLI](#1-instalación-de-git-y-github-cli)
+   - [Instalar Git](#11-instalar-git)
+   - [Instalar GitHub CLI (gh)](#12-instalar-github-cli-gh)
+2. [Crear tu Carpeta de Proyecto y Inicializar el Repositorio Local](#2-crear-tu-carpeta-de-proyecto-y-inicializar-el-repositorio-local)
+   - [Crear las Carpetas del Proyecto](#21-crear-las-carpetas-del-proyecto)
+   - [Inicializar el Repositorio Git Local](#22-inicializar-el-repositorio-git-local)
+   - [Crear Archivos y Realizar el Primer Commit](#23-crear-archivos-y-realizar-el-primer-commit)
+3. [Crear el Repositorio en GitHub con GitHub CLI](#3-crear-el-repositorio-en-github-con-github-cli)
+   - [Autenticarse en GitHub](#31-autenticarse-en-github)
+   - [Crear el Repositorio en GitHub](#32-crear-el-repositorio-en-github)
+4. [Vincular y Subir el Repositorio Local a GitHub](#4-vincular-y-subir-el-repositorio-local-a-github)
+   - [Vincular el Repositorio Local al Remoto](#41-vincular-el-repositorio-local-al-remoto)
+   - [Subir los Archivos al Repositorio Remoto](#42-subir-los-archivos-al-repositorio-remoto)
+5. [Comandos Básicos de Git](#5-comandos-básicos-de-git)
+   - [Ver el Estado del Repositorio](#51-ver-el-estado-del-repositorio)
+   - [Ver el Historial de Commits](#52-ver-el-historial-de-commits)
+   - [Trabajar con Ramas](#53-trabajar-con-ramas)
+   - [Fusionar Ramas](#54-fusionar-ramas)
+6. [Uso de .gitignore](#6-uso-de-gitignore)
+7. [Eliminar un Repositorio Local](#7-eliminar-un-repositorio-local)
+8. [📍 Conclusión](#conclusión)
+
+---
+
 ## 1. Instalación de Git y GitHub CLI
 
 ### 1.1 **Instalar Git**
 
-Si no tienes Git instalado, sigue los siguientes pasos:
+Si no tienes **Git** instalado, sigue los siguientes pasos:
 
 - **Windows**: [Descargar Git para Windows](https://git-scm.com/download/win)
 - **Linux**: Usa el siguiente comando:
@@ -234,7 +261,7 @@ Con esta guía, ahora sabes cómo **crear un repositorio en GitHub** desde la co
 
 He preparado el archivo `.md` con esta guía. Puedes **descargarlo** desde aquí:
 
-[Descargar Guía Git y GitHub](sandbox:/mnt/data/Guia_Git_y_GitHub.md)
+[Descargar Guía Git y GitHub](sandbox:/mnt/data/Guia_Git_y_GitHub_Con_Indice.md)
 
 ---
 
