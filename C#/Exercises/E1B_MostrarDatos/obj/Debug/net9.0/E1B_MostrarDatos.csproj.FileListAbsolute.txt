@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\bin\Debug\net9.0\E1B_MostrarDatos.exe
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\bin\Debug\net9.0\E1B_MostrarDatos.deps.json
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\bin\Debug\net9.0\E1B_MostrarDatos.runtimeconfig.json
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\bin\Debug\net9.0\E1B_MostrarDatos.dll
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\bin\Debug\net9.0\E1B_MostrarDatos.pdb
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.AssemblyInfo.cs
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.sourcelink.json
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.dll
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\refint\E1B_MostrarDatos.dll
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.pdb
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\E1B_MostrarDatos.genruntimeconfig.cache
+C:\Users\DevMa\Documents\Me\Repos\DSMguide\C#\Exercises\E1B_MostrarDatos\obj\Debug\net9.0\ref\E1B_MostrarDatos.dll
