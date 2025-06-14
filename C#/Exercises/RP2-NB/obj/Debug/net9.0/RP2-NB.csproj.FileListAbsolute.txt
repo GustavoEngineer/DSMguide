@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\bin\Debug\net9.0\RP2-NB.exe
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\bin\Debug\net9.0\RP2-NB.deps.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\bin\Debug\net9.0\RP2-NB.runtimeconfig.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\bin\Debug\net9.0\RP2-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\bin\Debug\net9.0\RP2-NB.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.AssemblyInfo.cs
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.sourcelink.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\refint\RP2-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\RP2-NB.genruntimeconfig.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP2-NB\obj\Debug\net9.0\ref\RP2-NB.dll
