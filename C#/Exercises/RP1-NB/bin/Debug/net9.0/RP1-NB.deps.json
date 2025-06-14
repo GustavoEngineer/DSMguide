@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "RP1-NB/1.0.0": {
+        "runtime": {
+          "RP1-NB.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RP1-NB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
