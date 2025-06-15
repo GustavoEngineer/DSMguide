@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\bin\Debug\net9.0\RP4-NB.exe
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\bin\Debug\net9.0\RP4-NB.deps.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\bin\Debug\net9.0\RP4-NB.runtimeconfig.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\bin\Debug\net9.0\RP4-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\bin\Debug\net9.0\RP4-NB.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.AssemblyInfo.cs
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.sourcelink.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\refint\RP4-NB.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\RP4-NB.genruntimeconfig.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Exercises\RP4-NB\obj\Debug\net9.0\ref\RP4-NB.dll
