@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\bin\Debug\net9.0\AsistenteDeHabitos.exe
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\bin\Debug\net9.0\AsistenteDeHabitos.deps.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\bin\Debug\net9.0\AsistenteDeHabitos.runtimeconfig.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\bin\Debug\net9.0\AsistenteDeHabitos.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\bin\Debug\net9.0\AsistenteDeHabitos.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.AssemblyInfo.cs
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.sourcelink.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\refint\AsistenteDeHabitos.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\AsistenteDeHabitos.genruntimeconfig.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Mini-Projects\AsistenteDeHabitos\obj\Debug\net9.0\ref\AsistenteDeHabitos.dll

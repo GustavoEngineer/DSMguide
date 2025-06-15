@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\bin\Debug\net9.0\Insert.exe
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\bin\Debug\net9.0\Insert.deps.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\bin\Debug\net9.0\Insert.runtimeconfig.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\bin\Debug\net9.0\Insert.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\bin\Debug\net9.0\Insert.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.AssemblyInfo.cs
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.sourcelink.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\refint\Insert.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\Insert.genruntimeconfig.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Insert\obj\Debug\net9.0\ref\Insert.dll
