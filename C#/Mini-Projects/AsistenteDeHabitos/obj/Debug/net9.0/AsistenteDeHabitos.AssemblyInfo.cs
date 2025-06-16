@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AsistenteDeHabitos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42167dcbf29089878a9f1a95089774847b4dea09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9690a62be261608c519c8efb53f616cff7212e8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AsistenteDeHabitos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AsistenteDeHabitos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
