@@ -1,22 +1,22 @@
-# 📚 Guía de Estudio: Programación en C# - Nivel Básico
+# Guía de Estudio: Programación en C# - Nivel Básico
 
 ## 📋 Índice
 
-1. [🚀 Introducción a C# y el Entorno de Desarrollo](#1-introducción-a-c-y-el-entorno-de-desarrollo)
-2. [📦 Variables y Tipos de Datos](#2-variables-y-tipos-de-datos)
-3. [⌨️ Entrada y Salida de Datos](#3-entrada-y-salida-de-datos)
-4. [🔀 Estructuras de Control - Condicionales](#4-estructuras-de-control---condicionales)
-5. [🔄 Estructuras de Control - Bucles](#5-estructuras-de-control---bucles)
-6. [📊 Arrays (Arreglos)](#6-arrays-arreglos)
-7. [⚙️ Métodos (Funciones)](#7-métodos-funciones)
-8. [📝 Strings y Manipulación de Texto](#8-strings-y-manipulación-de-texto)
-9. [🏗️ Introducción a la Programación Orientada a Objetos](#9-introducción-a-la-programación-orientada-a-objetos)
-10. [📚 Colecciones Básicas](#10-colecciones-básicas)
-11. [🎯 Proyectos Integradores](#proyectos-integradores)
+1. [Introducción a C# y el Entorno de Desarrollo](#1-introducción-a-c-y-el-entorno-de-desarrollo)
+2. [Variables y Tipos de Datos](#2-variables-y-tipos-de-datos)
+3. [Entrada y Salida de Datos](#3-entrada-y-salida-de-datos)
+4. [Estructuras de Control - Condicionales](#4-estructuras-de-control---condicionales)
+5. [Estructuras de Control - Bucles](#5-estructuras-de-control---bucles)
+6. [Arrays (Arreglos)](#6-arrays-arreglos)
+7. [Métodos (Funciones)](#7-métodos-funciones)
+8. [Strings y Manipulación de Texto](#8-strings-y-manipulación-de-texto)
+9. [Introducción a la Programación Orientada a Objetos](#9-introducción-a-la-programación-orientada-a-objetos)
+10. [Colecciones Básicas](#10-colecciones-básicas)
+11. [Proyectos Integradores](#proyectos-integradores)
 
 ---
 
-## 1. 🚀 Introducción a C# y el Entorno de Desarrollo
+## 1. Introducción a C# y el Entorno de Desarrollo
 
 ### 📖 Subtemas:
 - **Estructura básica** de un programa en C#
@@ -30,7 +30,7 @@
 
 ---
 
-## 2. 📦 Variables y Tipos de Datos
+## 2. Variables y Tipos de Datos
 
 ### 📖 Subtemas:
 - **Tipos de datos primitivos** (int, double, string, bool, char)
@@ -47,7 +47,7 @@
 
 ---
 
-## 3. ⌨️ Entrada y Salida de Datos
+## 3. Entrada y Salida de Datos
 
 ### 📖 Subtemas:
 - **Console.WriteLine()** y Console.Write()
@@ -63,7 +63,7 @@
 
 ---
 
-## 4. 🔀 Estructuras de Control - Condicionales
+## 4. Estructuras de Control - Condicionales
 
 ### 📖 Subtemas:
 - **Estructura if, else if, else**
@@ -79,7 +79,7 @@
 
 ---
 
-## 5. 🔄 Estructuras de Control - Bucles
+## 5. Estructuras de Control - Bucles
 
 ### 📖 Subtemas:
 - **Bucle for**
@@ -96,7 +96,7 @@
 
 ---
 
-## 6. 📊 Arrays (Arreglos)
+## 6. Arrays (Arreglos)
 
 ### 📖 Subtemas:
 - **Declaración e inicialización** de arrays
@@ -113,7 +113,7 @@
 
 ---
 
-## 7. ⚙️ Métodos (Funciones)
+## 7. Métodos (Funciones)
 
 ### 📖 Subtemas:
 - **Definición y llamada** de métodos
@@ -131,7 +131,7 @@
 
 ---
 
-## 8. 📝 Strings y Manipulación de Texto
+## 8. Strings y Manipulación de Texto
 
 ### 📖 Subtemas:
 - **Propiedades de strings** (Length, indexación)
@@ -148,7 +148,7 @@
 
 ---
 
-## 9. 🏗️ Introducción a la Programación Orientada a Objetos
+## 9. Introducción a la Programación Orientada a Objetos
 
 ### 📖 Subtemas:
 - **Conceptos básicos**: clases y objetos
@@ -165,7 +165,7 @@
 
 ---
 
-## 10. 📚 Colecciones Básicas
+## 10. Colecciones Básicas
 
 ### 📖 Subtemas:
 - **List<T>**
@@ -182,9 +182,9 @@
 
 ---
 
-## 🎯 PROYECTOS INTEGRADORES
+## PROYECTOS INTEGRADORES
 
-### 🎓 Proyecto 1: Sistema de Gestión de Estudiantes
+### Proyecto 1: Sistema de Gestión de Estudiantes
 **📌 Conceptos aplicados:** Variables, arrays, métodos, condicionales, bucles
 
 **✨ Funcionalidades:**
@@ -194,7 +194,7 @@
 - 📈 Mostrar reportes de rendimiento
 - ✔️ Validar datos de entrada
 
-### 🎮 Proyecto 2: Juego de Aventura de Texto
+### Proyecto 2: Juego de Aventura de Texto
 **📌 Conceptos aplicados:** OOP básico, strings, colecciones, estructuras de control
 
 **✨ Funcionalidades:**
@@ -204,7 +204,7 @@
 - ⚔️ Sistema de combate básico
 - 💾 Guardado de progreso en memoria
 
-### 💰 Proyecto 3: Aplicación de Finanzas Personales
+### Proyecto 3: Aplicación de Finanzas Personales
 **📌 Conceptos aplicados:** Clases, colecciones, métodos, manipulación de datos
 
 **✨ Funcionalidades:**
