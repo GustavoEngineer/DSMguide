@@ -3,11 +3,8 @@
 ## 1. Introducción a C# y el Entorno de Desarrollo
 
 ### Subtemas:
-- Qué es C# y el framework .NET
-- Historia y características del lenguaje
-- Instalación de Visual Studio / Visual Studio Code
-- Creación del primer proyecto en C#
 - Estructura básica de un programa en C#
+- Creación del primer proyecto en C#
 - Compilación y ejecución
 
 ### Ejercicios Guiados:
