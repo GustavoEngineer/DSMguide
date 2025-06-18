@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E2-InformaciónPersonal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+684984066ec6f87c542cd5df53644ba0ac6f946a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d37f4dd5e59464ca09efa81abe9c2128730be8f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("E2-InformaciónPersonal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E2-InformaciónPersonal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
