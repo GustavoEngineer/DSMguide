@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuscarElementos", "BuscarElementos.csproj", "{DF60B2C8-65AD-CBA0-8A2C-09A4F5FBF2CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF60B2C8-65AD-CBA0-8A2C-09A4F5FBF2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF60B2C8-65AD-CBA0-8A2C-09A4F5FBF2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF60B2C8-65AD-CBA0-8A2C-09A4F5FBF2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF60B2C8-65AD-CBA0-8A2C-09A4F5FBF2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68DBD219-7BA5-4E64-AB94-A1F0F7F6FD81}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\bin\Debug\net9.0\Clear.exe
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\bin\Debug\net9.0\Clear.deps.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\bin\Debug\net9.0\Clear.runtimeconfig.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\bin\Debug\net9.0\Clear.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\bin\Debug\net9.0\Clear.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.AssemblyInfoInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.AssemblyInfo.cs
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.csproj.CoreCompileInputs.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.sourcelink.json
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\refint\Clear.dll
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.pdb
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\Clear.genruntimeconfig.cache
+C:\Users\DevMa\Documents\ME\Repos\DSMguide\C#\Topics\Lists\Methods\Clear\obj\Debug\net9.0\ref\Clear.dll
