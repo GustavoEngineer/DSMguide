@@ -109,13 +109,23 @@ CARTELERAAPI/
 ```
 CARTELERAAPI/
 ├── 📁 Entities/
-│   ├── Movie.cs
-│   ├── Genre.cs
-│   └── Director.cs
+│   └── Movie.cs
 ├── ...
 ```
 
-**Ejemplo de entidad**: Movie.cs representará una película con sus propiedades básicas
+**Ejemplo de entidad Movie.cs:**
+```csharp
+public class Movie
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Genre { get; set; }
+    public int Duration { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Director { get; set; }
+    public decimal Price { get; set; }
+}
+```
 
 ### Paso 4: Crear la Capa de DTOs (Data Transfer Objects)
 **Propósito**: Definir los objetos que se intercambiarán entre cliente y servidor
@@ -124,7 +134,32 @@ CARTELERAAPI/
    - DTO para creación (sin ID)
    - DTO para actualización
    - DTO para consulta (puede incluir datos relacionados)
-2. Los DTOs deben contener solo la información necesaria para cada operación
+**Ejemplos de DTOs:**
+
+```csharp
+// MovieCreateDto.cs - Para crear película
+public class MovieCreateDto
+{
+    public string Title { get; set; }
+    public string Genre { get; set; }
+    public int Duration { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Director { get; set; }
+    public decimal Price { get; set; }
+}
+
+// MovieResponseDto.cs - Para responder datos
+public class MovieResponseDto
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Genre { get; set; }
+    public int Duration { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Director { get; set; }
+    public decimal Price { get; set; }
+}
+```
 
 **Estructura después de crear DTOs:**
 ```
@@ -132,10 +167,7 @@ CARTELERAAPI/
 ├── 📁 Core/
 │   ├── 📁 DTOs/
 │   │   ├── MovieCreateDto.cs
-│   │   ├── MovieUpdateDto.cs
-│   │   ├── MovieResponseDto.cs
-│   │   ├── GenreDto.cs
-│   │   └── DirectorDto.cs
+│   │   └── MovieResponseDto.cs
 │   └── ...
 ├── ...
 ```
@@ -150,7 +182,18 @@ CARTELERAAPI/
    - Crear nuevo registro
    - Actualizar registro existente
    - Eliminar registro
-   - Métodos de búsqueda específicos
+**Ejemplo de interfaz IMovieRepository.cs:**
+```csharp
+public interface IMovieRepository
+{
+    Task<List<Movie>> GetAllAsync();
+    Task<Movie> GetByIdAsync(int id);
+    Task<Movie> CreateAsync(Movie movie);
+    Task<Movie> UpdateAsync(Movie movie);
+    Task<bool> DeleteAsync(int id);
+    Task<List<Movie>> GetByGenreAsync(string genre);
+}
+```
 
 **Estructura después de crear interfaces:**
 ```
@@ -158,8 +201,6 @@ CARTELERAAPI/
 ├── 📁 Core/
 │   ├── 📁 Interfaces/
 │   │   ├── IMovieRepository.cs
-│   │   ├── IGenreRepository.cs
-│   │   ├── IDirectorRepository.cs
 │   │   └── IMovieService.cs
 │   └── ...
 ├── ...
@@ -176,7 +217,27 @@ CARTELERAAPI/
 2. Hereda de DbContext
 3. Define los DbSet para cada entidad
 4. Configura las relaciones entre tablas en OnModelCreating
-5. Establece las configuraciones de mapeo necesarias
+**Ejemplo MovieDbContext.cs:**
+```csharp
+public class MovieDbContext : DbContext
+{
+    public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options) { }
+    
+    public DbSet<Movie> Movies { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Movie>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Title).IsRequired().HasMaxLength(200);
+            entity.Property(e => e.Genre).HasMaxLength(50);
+            entity.Property(e => e.Director).HasMaxLength(100);
+            entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
+        });
+    }
+}
+```
 
 **Estructura después del contexto:**
 ```
@@ -202,9 +263,7 @@ CARTELERAAPI/
 CARTELERAAPI/
 ├── 📁 Infrastructure/
 │   ├── 📁 Repositories/
-│   │   ├── MovieRepository.cs
-│   │   ├── GenreRepository.cs
-│   │   └── DirectorRepository.cs
+│   │   └── MovieRepository.cs
 │   └── ...
 ├── ...
 ```
@@ -229,9 +288,7 @@ CARTELERAAPI/
 CARTELERAAPI/
 ├── 📁 Application/
 │   ├── 📁 Services/
-│   │   ├── MovieService.cs
-│   │   ├── GenreService.cs
-│   │   └── DirectorService.cs
+│   │   └── MovieService.cs
 │   └── ...
 ├── ...
 ```
@@ -252,16 +309,59 @@ CARTELERAAPI/
    - GET para obtener datos
    - POST para crear
    - PUT para actualizar
-   - DELETE para eliminar
+**Ejemplo MoviesController.cs:**
+```csharp
+[ApiController]
+[Route("api/[controller]")]
+public class MoviesController : ControllerBase
+{
+    private readonly MovieService _movieService;
+    
+    public MoviesController(MovieService movieService)
+    {
+        _movieService = movieService;
+    }
+    
+    [HttpGet]
+    public async Task<ActionResult<List<MovieResponseDto>>> GetMovies()
+    {
+        try
+        {
+            var movies = await _movieService.GetAllMoviesAsync();
+            return Ok(movies);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+    
+    [HttpPost]
+    public async Task<ActionResult<MovieResponseDto>> CreateMovie(MovieCreateDto createDto)
+    {
+        try
+        {
+            var movie = await _movieService.CreateMovieAsync(createDto);
+            return CreatedAtAction(nameof(GetMovies), new { id = movie.Id }, movie);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+}
+```
 
 **Estructura después de los controladores:**
 ```
 CARTELERAAPI/
 ├── 📁 Presentation/
 │   ├── 📁 Controllers/
-│   │   ├── MoviesController.cs
-│   │   ├── GenresController.cs
-│   │   └── DirectorsController.cs
+│   │   └── MoviesController.cs
 │   └── ...
 ├── ...
 ```
@@ -283,13 +383,58 @@ CARTELERAAPI/
 2. Registra el contexto de base de datos
 3. Registra los repositorios con sus interfaces
 4. Registra los servicios de aplicación
-5. Configura el tiempo de vida de cada dependencia (Scoped, Transient, Singleton)
+**Ejemplo de configuración en Program.cs:**
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+// Agregar servicios
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Configurar Entity Framework
+builder.Services.AddDbContext<MovieDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Registrar repositorios y servicios
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<MovieService>();
+
+var app = builder.Build();
+
+// Configurar pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();
+```
 
 ### Paso 12: Configurar las Cadenas de Conexión
 1. Ve a appsettings.json
 2. Añade la sección "ConnectionStrings"
 3. Define tu cadena de conexión a la base de datos
-4. Crea versiones para diferentes entornos (Development, Production)
+**Ejemplo appsettings.json:**
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=CarteleraDB;Trusted_Connection=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
 
 ### Paso 13: Configurar Opciones Adicionales
 1. En appsettings.Development.json configura:
@@ -342,40 +487,27 @@ dotnet ef database update
 CARTELERAAPI/
 ├── 📁 Application/
 │   └── 📁 Services/
-│       ├── MovieService.cs
-│       ├── GenreService.cs
-│       └── DirectorService.cs
+│       └── MovieService.cs
 ├── 📁 Core/
 │   ├── 📁 DTOs/
 │   │   ├── MovieCreateDto.cs
-│   │   ├── MovieUpdateDto.cs
-│   │   ├── MovieResponseDto.cs
-│   │   ├── GenreDto.cs
-│   │   └── DirectorDto.cs
+│   │   └── MovieResponseDto.cs
 │   └── 📁 Interfaces/
 │       ├── IMovieRepository.cs
-│       ├── IGenreRepository.cs
-│       ├── IDirectorRepository.cs
 │       └── IMovieService.cs
 ├── 📁 Entities/
-│   ├── Movie.cs
-│   ├── Genre.cs
-│   └── Director.cs
+│   └── Movie.cs
 ├── 📁 Infrastructure/
 │   ├── 📁 Data/
 │   │   └── MovieDbContext.cs
 │   └── 📁 Repositories/
-│       ├── MovieRepository.cs
-│       ├── GenreRepository.cs
-│       └── DirectorRepository.cs
+│       └── MovieRepository.cs
 ├── 📁 Migrations/
 │   ├── 20240101000000_InitialCreate.cs
 │   └── MovieDbContextModelSnapshot.cs
 ├── 📁 Presentation/
 │   └── 📁 Controllers/
-│       ├── MoviesController.cs
-│       ├── GenresController.cs
-│       └── DirectorsController.cs
+│       └── MoviesController.cs
 ├── 📁 Properties/
 │   └── launchSettings.json
 ├── appsettings.json
@@ -397,4 +529,4 @@ Al seguir esta guía paso a paso, tendrás una Web API completamente funcional c
 - **Configuración** flexible para diferentes entornos
 - **Base sólida** para escalar y mantener
 
-¡Tu Web API estará lista para recibir peticiones y gestionar datos de películas (o cualquier entidad que hayas definido)!
+¡Tu Web API estará lista para recibir peticiones y gestionar datos de películas en tu cartelera!
