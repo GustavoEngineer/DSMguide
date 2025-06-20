@@ -1,0 +1,6 @@
+@CarteleraAppi_HostAddress = http://localhost:5291
+
+GET {{CarteleraAppi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
