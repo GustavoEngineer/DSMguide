@@ -1,183 +1,302 @@
 # 📋 Formas Normales (1FN - 5FN)
 
-Las Formas Normales son reglas progresivas para organizar datos y eliminar redundancia. Cada forma normal resuelve un problema específico diferente.
+## ¿Qué son las Formas Normales?
 
-### 8.1 Primera Forma Normal (1FN)
+Las **Formas Normales** son como las **reglas de organización** de una biblioteca. Así como una biblioteca organiza los libros por categorías, autores y temas, las formas normales organizan tu información para evitar duplicados y problemas.
 
-**🎯 Regla:** Cada celda debe contener UN solo valor atómico.
+## 🏪 Ejemplo de la Vida Real: La Tienda "Todo en Uno"
 
-#### **❌ Problema - No cumple 1FN:**
-| Actor | Personajes | Canciones |
-|-------|------------|-----------|
-| Lin-Manuel | Hamilton, John Laurens | Wait for It, Satisfied |
-| Leslie | Aaron Burr | Wait for It, Dear Theodosia |
+María tiene una tienda y guarda toda la información en una sola hoja de Excel. Pronto se da cuenta de que tiene problemas:
+- **Información repetida** (el mismo cliente aparece muchas veces)
+- **Datos inconsistentes** (el mismo producto tiene precios diferentes)
+- **Dificultad para encontrar información**
 
-#### **✅ Solución - Cumple 1FN:**
-| Actor | Personaje | Cancion |
-|-------|-----------|---------|
-| Lin-Manuel | Hamilton | Wait for It |
-| Lin-Manuel | Hamilton | Satisfied |
-| Lin-Manuel | John Laurens | Wait for It |
-| Leslie | Aaron Burr | Wait for It |
-| Leslie | Aaron Burr | Dear Theodosia |
+Las formas normales le ayudan a organizar mejor su información.
 
-**💡 Memoria:** "Una cosa por celda"
+## 🎯 Primera Forma Normal (1FN)
 
-### 8.2 Segunda Forma Normal (2FN)
+### **Regla**: "Una cosa por celda"
 
-**🎯 Regla:** Cumple 1FN + Los atributos no-clave deben depender COMPLETAMENTE de la clave primaria.
+**Concepto**: Como organizar tu closet - cada prenda va en su propio espacio, no amontonadas.
 
-#### **❌ Problema - No cumple 2FN:**
-Clave primaria: (Actor + Personaje)
+#### ❌ **Problema - No cumple 1FN**:
+```
+┌─────────────┬─────────────────────┬────────────────────┐
+│ Cliente     │ Productos           │ Teléfonos          │
+├─────────────┼─────────────────────┼────────────────────┤
+│ Juan Pérez  │ Camiseta, Pantalón  │ 555-1234, 555-5678 │
+│ Ana García  │ Zapatos             │ 555-9012           │
+└─────────────┴─────────────────────┴────────────────────┘
+```
 
-| Actor | Personaje | Pais_Actor | Duracion_Actuacion |
-|-------|-----------|------------|-------------------|
-| Lin-Manuel | Hamilton | Estados Unidos | 2h 30min |
-| Lin-Manuel | John Laurens | Estados Unidos | 45min |
+**Problema**: Una celda tiene múltiples valores separados por comas.
 
-**Problema:** `Pais_Actor` solo depende de `Actor`, no de (Actor + Personaje)
+#### ✅ **Solución - Cumple 1FN**:
+```
+┌─────────────┬───────────┬───────────┐
+│ Cliente     │ Producto  │ Teléfono  │
+├─────────────┼───────────┼───────────┤
+│ Juan Pérez  │ Camiseta  │ 555-1234  │
+│ Juan Pérez  │ Pantalón  │ 555-1234  │
+│ Juan Pérez  │ Camiseta  │ 555-5678  │
+│ Juan Pérez  │ Pantalón  │ 555-5678  │
+│ Ana García  │ Zapatos   │ 555-9012  │
+└─────────────┴───────────┴───────────┘
+```
 
-#### **✅ Solución - Cumple 2FN:**
+**💡 Memoria**: "Cada celda tiene un solo valor"
 
-**Tabla ACTORES:**
-| Actor | Pais_Actor |
-|-------|------------|
-| Lin-Manuel | Estados Unidos |
-| Leslie | Estados Unidos |
+## 🎯 Segunda Forma Normal (2FN)
 
-**Tabla INTERPRETACIONES:**
-| Actor | Personaje | Duracion_Actuacion |
-|-------|-----------|-------------------|
-| Lin-Manuel | Hamilton | 2h 30min |
-| Lin-Manuel | John Laurens | 45min |
+### **Regla**: "Todo depende de la clave completa"
 
-**💡 Memoria:** "Todo depende de la clave completa"
+**Concepto**: Como organizar una escuela - la información del estudiante no debe depender solo del profesor.
 
-### 8.3 Tercera Forma Normal (3FN)
+#### ❌ **Problema - No cumple 2FN**:
+```
+Clave primaria: (Cliente + Producto)
 
-**🎯 Regla:** Cumple 2FN + No debe haber dependencias transitivas (A→B→C).
+┌─────────────┬───────────┬───────────┬─────────────┐
+│ Cliente     │ Producto  │ Dirección │ Precio      │
+├─────────────┼───────────┼───────────┼─────────────┤
+│ Juan Pérez  │ Camiseta  │ Calle 1   │ $150        │
+│ Juan Pérez  │ Pantalón  │ Calle 1   │ $200        │
+│ Ana García  │ Zapatos   │ Calle 2   │ $300        │
+└─────────────┴───────────┴───────────┴─────────────┘
+```
 
-#### **❌ Problema - No cumple 3FN:**
-| Actor | Pais_Actor | Continente_Pais |
-|-------|------------|-----------------|
-| Lin-Manuel | Estados Unidos | América del Norte |
-| Leslie | Estados Unidos | América del Norte |
+**Problema**: La dirección solo depende del Cliente, no de (Cliente + Producto).
 
-**Problema:** Actor → Pais_Actor → Continente_Pais (dependencia transitiva)
+#### ✅ **Solución - Cumple 2FN**:
 
-#### **✅ Solución - Cumple 3FN:**
+**Tabla CLIENTES**:
+```
+┌─────────────┬───────────┐
+│ Cliente     │ Dirección │
+├─────────────┼───────────┤
+│ Juan Pérez  │ Calle 1   │
+│ Ana García  │ Calle 2   │
+└─────────────┴───────────┘
+```
 
-**Tabla ACTORES:**
-| Actor | Pais_Actor |
-|-------|------------|
-| Lin-Manuel | Estados Unidos |
-| Leslie | Estados Unidos |
+**Tabla VENTAS**:
+```
+┌─────────────┬───────────┬─────────┐
+│ Cliente     │ Producto  │ Precio  │
+├─────────────┼───────────┼─────────┤
+│ Juan Pérez  │ Camiseta  │ $150    │
+│ Juan Pérez  │ Pantalón  │ $200    │
+│ Ana García  │ Zapatos   │ $300    │
+└─────────────┴───────────┴─────────┘
+```
 
-**Tabla PAISES:**
-| Pais | Continente |
-|------|------------|
-| Estados Unidos | América del Norte |
-| Francia | Europa |
+**💡 Memoria**: "Separa lo que no depende de todo"
 
-**💡 Memoria:** "Rompe las cadenas"
+## 🎯 Tercera Forma Normal (3FN)
 
-### 8.4 Forma Normal Boyce-Codd (FNBC)
+### **Regla**: "Rompe las cadenas"
 
-**🎯 Regla:** Cumple 3FN + Para cada dependencia funcional, el determinante debe ser superclave.
+**Concepto**: Como organizar una empresa - no guardes información que se puede calcular.
 
-#### **❌ Problema - No cumple FNBC:**
-| Estudiante | Profesor | Materia |
-|------------|----------|---------|
-| María | Lin-Manuel | Composición |
-| Juan | Lin-Manuel | Composición |
+#### ❌ **Problema - No cumple 3FN**:
+```
+┌─────────────┬───────────┬─────────────┐
+│ Cliente     │ Ciudad    │ País        │
+├─────────────┼───────────┼─────────────┤
+│ Juan Pérez  │ Madrid    │ España      │
+│ Ana García  │ Madrid    │ España      │
+│ Carlos López│ Barcelona │ España      │
+└─────────────┴───────────┴─────────────┘
+```
 
-**Problema:** Profesor → Materia, pero "Profesor" no es superclave.
+**Problema**: Cliente → Ciudad → País (cadena de dependencias).
 
-#### **✅ Solución - Cumple FNBC:**
+#### ✅ **Solución - Cumple 3FN**:
 
-**Tabla PROFESOR_MATERIA:**
-| Profesor | Materia |
-|----------|---------|
-| Lin-Manuel | Composición |
-| Daveed | Actuación |
+**Tabla CLIENTES**:
+```
+┌─────────────┬───────────┐
+│ Cliente     │ Ciudad    │
+├─────────────┼───────────┤
+│ Juan Pérez  │ Madrid    │
+│ Ana García  │ Madrid    │
+│ Carlos López│ Barcelona │
+└─────────────┴───────────┘
+```
 
-**Tabla ESTUDIANTE_PROFESOR:**
-| Estudiante | Profesor |
-|------------|----------|
-| María | Lin-Manuel |
-| Juan | Lin-Manuel |
+**Tabla CIUDADES**:
+```
+┌───────────┬─────────┐
+│ Ciudad    │ País    │
+├───────────┼─────────┤
+│ Madrid    │ España  │
+│ Barcelona │ España  │
+└───────────┴─────────┘
+```
 
-**💡 Memoria:** "Solo los jefes mandan"
+**💡 Memoria**: "Elimina las dependencias en cadena"
 
-### 8.5 Cuarta Forma Normal (4FN)
+## 🎯 Forma Normal Boyce-Codd (FNBC)
 
-**🎯 Regla:** Cumple FNBC + No debe tener dependencias multivaluadas independientes.
+### **Regla**: "Solo los jefes mandan"
 
-#### **❌ Problema - No cumple 4FN:**
-| Actor | Habilidad | Instrumento |
-|-------|-----------|-------------|
-| Lin-Manuel | Canto | Piano |
-| Lin-Manuel | Canto | Guitarra |
-| Lin-Manuel | Composición | Piano |
-| Lin-Manuel | Composición | Guitarra |
+**Concepto**: Como una empresa - solo los supervisores pueden determinar información de sus subordinados.
 
-**Problema:** Habilidades e instrumentos son independientes, pero se mezclan innecesariamente.
+#### ❌ **Problema - No cumple FNBC**:
+```
+┌─────────────┬───────────┬──────────────┐
+│ Empleado    │ Jefe      │ Departamento │
+├─────────────┼───────────┼──────────────┤
+│ Juan Pérez  │ María     │ Ventas       │
+│ Ana García  │ María     │ Ventas       │
+│ Carlos López│ Pedro     │ Marketing    │
+└─────────────┴───────────┴──────────────┘
+```
 
-#### **✅ Solución - Cumple 4FN:**
+**Problema**: Jefe → Departamento, pero "Jefe" no es clave primaria.
 
-**Tabla ACTOR_HABILIDAD:**
-| Actor | Habilidad |
-|-------|-----------|
-| Lin-Manuel | Canto |
-| Lin-Manuel | Composición |
+#### ✅ **Solución - Cumple FNBC**:
 
-**Tabla ACTOR_INSTRUMENTO:**
-| Actor | Instrumento |
-|-------|-------------|
-| Lin-Manuel | Piano |
-| Lin-Manuel | Guitarra |
+**Tabla JEFES_DEPARTAMENTOS**:
+```
+┌─────────┬───────────────┐
+│ Jefe    │ Departamento  │
+├─────────┼───────────────┤
+│ María   │ Ventas        │
+│ Pedro   │ Marketing     │
+└─────────┴───────────────┘
+```
 
-**💡 Memoria:** "Separa listas independientes"
+**Tabla EMPLEADOS_JEFES**:
+```
+┌─────────────┬─────────┐
+│ Empleado    │ Jefe    │
+├─────────────┼─────────┤
+│ Juan Pérez  │ María   │
+│ Ana García  │ María   │
+│ Carlos López│ Pedro   │
+└─────────────┴─────────┘
+```
 
-### 8.6 Quinta Forma Normal (5FN)
+**💡 Memoria**: "Solo las claves primarias determinan"
 
-**🎯 Regla:** Cumple 4FN + No debe tener dependencias de unión no triviales.
+## 🎯 Cuarta Forma Normal (4FN)
 
-#### **❌ Problema - No cumple 5FN:**
-| Actor | Personaje | Escena |
-|-------|-----------|--------|
-| Lin-Manuel | Hamilton | Acto 1 |
-| Lin-Manuel | Hamilton | Acto 2 |
-| Leslie | Burr | Acto 1 |
-| Leslie | Burr | Acto 2 |
+### **Regla**: "Separa listas independientes"
 
-**Problema:** Esta información se puede reconstruir perfectamente desde tablas separadas.
+**Concepto**: Como organizar un restaurante - los ingredientes y los alérgenos son listas independientes.
 
-#### **✅ Solución - Cumple 5FN:**
+#### ❌ **Problema - No cumple 4FN**:
+```
+┌─────────────┬─────────────┬─────────────┐
+│ Plato       │ Ingrediente │ Alérgeno    │
+├─────────────┼─────────────┼─────────────┤
+│ Pizza       │ Queso       │ Lácteos     │
+│ Pizza       │ Queso       │ Gluten      │
+│ Pizza       │ Tomate      │ Lácteos     │
+│ Pizza       │ Tomate      │ Gluten      │
+└─────────────┴─────────────┴─────────────┘
+```
 
-**Tabla ACTOR_PERSONAJE:**
-| Actor | Personaje |
-|-------|-----------|
-| Lin-Manuel | Hamilton |
-| Leslie | Burr |
+**Problema**: Ingredientes y alérgenos son independientes pero se mezclan.
 
-**Tabla PERSONAJE_ESCENA:**
-| Personaje | Escena |
-|-----------|--------|
-| Hamilton | Acto 1 |
-| Hamilton | Acto 2 |
-| Burr | Acto 1 |
-| Burr | Acto 2 |
+#### ✅ **Solución - Cumple 4FN**:
 
-**Tabla ACTOR_ESCENA:**
-| Actor | Escena |
-|-------|--------|
-| Lin-Manuel | Acto 1 |
-| Lin-Manuel | Acto 2 |
-| Leslie | Acto 1 |
-| Leslie | Acto 2 |
+**Tabla PLATOS_INGREDIENTES**:
+```
+┌─────────┬─────────────┐
+│ Plato   │ Ingrediente │
+├─────────┼─────────────┤
+│ Pizza   │ Queso       │
+│ Pizza   │ Tomate      │
+└─────────┴─────────────┘
+```
 
-**💡 Memoria:** "No guardes lo que puedes calcular"
+**Tabla PLATOS_ALERGENOS**:
+```
+┌─────────┬─────────────┐
+│ Plato   │ Alérgeno    │
+├─────────┼─────────────┤
+│ Pizza   │ Lácteos     │
+│ Pizza   │ Gluten      │
+└─────────┴─────────────┘
+```
+
+**💡 Memoria**: "No mezcles listas independientes"
+
+## 🎯 Quinta Forma Normal (5FN)
+
+### **Regla**: "No guardes lo que puedes calcular"
+
+**Concepto**: Como un horario de clases - no necesitas guardar todas las combinaciones si puedes calcularlas.
+
+#### ❌ **Problema - No cumple 5FN**:
+```
+┌─────────────┬───────────┬───────────┐
+│ Estudiante  │ Materia   │ Profesor  │
+├─────────────┼───────────┼───────────┤
+│ Juan        │ Matemáticas│ María     │
+│ Juan        │ Historia   │ Pedro     │
+│ Ana         │ Matemáticas│ María     │
+│ Ana         │ Historia   │ Pedro     │
+└─────────────┴───────────┴───────────┘
+```
+
+**Problema**: Esta información se puede reconstruir desde tablas separadas.
+
+#### ✅ **Solución - Cumple 5FN**:
+
+**Tabla ESTUDIANTES_MATERIAS**:
+```
+┌─────────────┬───────────┐
+│ Estudiante  │ Materia   │
+├─────────────┼───────────┤
+│ Juan        │ Matemáticas│
+│ Juan        │ Historia   │
+│ Ana         │ Matemáticas│
+│ Ana         │ Historia   │
+└─────────────┴───────────┘
+```
+
+**Tabla MATERIAS_PROFESORES**:
+```
+┌───────────┬─────────┐
+│ Materia   │ Profesor│
+├───────────┼─────────┤
+│ Matemáticas│ María   │
+│ Historia   │ Pedro   │
+└───────────┴─────────┘
+```
+
+**💡 Memoria**: "No dupliques información calculable"
+
+## 🚀 ¿Cuándo Usar Cada Forma Normal?
+
+### **1FN**: Siempre
+- Es la base de todas las demás
+- Cada celda debe tener un solo valor
+
+### **2FN**: Casi siempre
+- Elimina dependencias parciales
+- Mejora la organización
+
+### **3FN**: En la mayoría de casos
+- Elimina dependencias transitivas
+- Reduce redundancia significativamente
+
+### **FNBC**: En casos específicos
+- Cuando hay dependencias funcionales complejas
+- Para bases de datos muy grandes
+
+### **4FN y 5FN**: Raramente
+- Solo en casos muy específicos
+- Pueden complicar demasiado el diseño
+
+## 💡 Consejo del Experto
+
+> *"El 80% de los problemas se resuelven con las primeras 3 formas normales. No te compliques con las demás a menos que sea absolutamente necesario."*
 
 ---
+
+**¿Entendiste?** ¡Perfecto! Ahora sabes cómo organizar tu información de manera eficiente. En la siguiente lección veremos las reglas que protegen la calidad de tus datos. 📋
 
