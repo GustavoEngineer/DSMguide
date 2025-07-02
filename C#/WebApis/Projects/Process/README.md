@@ -13,11 +13,11 @@ Usamos una API de contactos porque:
 - Cubre todos los conceptos básicos de una WebAPI
 
 ## Índice
-1. [¿Qué es una WebAPI?](#qué-es-una-webapi)
-2. [Estructura del proyecto](#estructura-del-proyecto)
-3. [Cómo funciona una WebAPI](#cómo-funciona-una-webapi)
-4. [Operaciones CRUD](#operaciones-crud)
-5. [Arquitectura en capas](#arquitectura-en-capas)
+1. [¿Qué es una WebAPI?](#1-qué-es-una-webapi)
+2. [Estructura del proyecto](#2-estructura-del-proyecto)
+3. [Cómo funciona una WebAPI](#3-cómo-funciona-una-webapi)
+4. [Operaciones CRUD](#4-operaciones-crud)
+5. [Arquitectura en capas](#5-arquitectura-en-capas)
 
 ---
 
