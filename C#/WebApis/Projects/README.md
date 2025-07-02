@@ -7,7 +7,7 @@
 - Ganas de aprender
 
 ## Índice
-1. [¿Qué es una WebAPI y qué es un palíndromo?](#que-es-una-webapi-y-que-es-un-palindromo)
+1. [¿Qué es una WebAPI y qué es un palíndromo?](#que-es-una-webapi-y-qué-es-un-palíndromo)
 2. [Crear la base de datos](#crear-la-base-de-datos)
 3. [Crear el espacio de trabajo](#crear-el-espacio-de-trabajo)
 4. [Instalar los paquetes NuGet necesarios](#instalar-los-paquetes-nuget-necesarios)
@@ -222,6 +222,7 @@ public class PalindromoController : ControllerBase
         _repo = repo;
     }
 
+    // POST: api/Palindromo
     [HttpPost]
     public async Task<IActionResult> VerificarPalindromo([FromBody] PalindromoDto dto)
     {
@@ -236,6 +237,7 @@ public class PalindromoController : ControllerBase
         return Ok(new { palabra = dto.Palabra, esPalindromo });
     }
 
+    // GET: api/Palindromo
     [HttpGet]
     public async Task<IActionResult> Historial()
     {
