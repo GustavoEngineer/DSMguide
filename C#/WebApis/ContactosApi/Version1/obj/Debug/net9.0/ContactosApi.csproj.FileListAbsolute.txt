@@ -397,3 +397,12 @@ C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\obj\Debug\
 C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\obj\Debug\net9.0\ContactosApi.pdb
 C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\obj\Debug\net9.0\ContactosApi.genruntimeconfig.cache
 C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\obj\Debug\net9.0\ref\ContactosApi.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\DevMa\Documents\ME\DSMguide\C#\WebApis\ContactosApi\Version1\bin\Debug\net9.0\BCrypt.Net-Next.dll

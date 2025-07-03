@@ -3,4 +3,241 @@
 GET {{ContactosApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
+### Registro de usuario
+POST {{ContactosApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "correo": "usuario@correo.com",
+  "contrasena": "tu_contraseña",
+  "rol": "User"
+}
+
+### Registro de administrador
+POST {{ContactosApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "correo": "admin@correo.com",
+  "contrasena": "admin123",
+  "rol": "Admin"
+}
+
+### Login de usuario
+POST {{ContactosApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "correo": "usuario@correo.com",
+  "contrasena": "tu_contraseña"
+}
+
+### Login de administrador
+POST {{ContactosApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "correo": "admin@correo.com",
+  "contrasena": "admin123"
+}
+
+### Ejemplo de petición protegida (reemplaza TU_TOKEN_AQUI por el token recibido)
+GET {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Ejemplo de endpoint solo para Admin (borrar contacto)
+DELETE {{ContactosApi_HostAddress}}/api/contactos/1
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Crear contacto (requiere autenticación)
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan.perez@email.com",
+  "telefono": "123456789"
+}
+
+### Crear contacto 1 - Juan Pérez
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan.perez@email.com",
+  "telefono": "123456789",
+  "activo": true
+}
+
+### Crear contacto 2 - María García
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "María",
+  "apellido": "García",
+  "email": "maria.garcia@email.com",
+  "telefono": "987654321",
+  "activo": true
+}
+
+### Crear contacto 3 - Carlos López
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Carlos",
+  "apellido": "López",
+  "email": "carlos.lopez@email.com",
+  "telefono": "555123456",
+  "activo": true
+}
+
+### Crear contacto 4 - Ana Rodríguez (inactiva)
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Ana",
+  "apellido": "Rodríguez",
+  "email": "ana.rodriguez@email.com",
+  "telefono": "777888999",
+  "activo": false
+}
+
+### Crear contacto 5 - Luis Martínez
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Luis",
+  "apellido": "Martínez",
+  "email": "luis.martinez@email.com",
+  "telefono": "111222333",
+  "activo": true
+}
+
+### Crear contacto 6 - Carmen Sánchez
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Carmen",
+  "apellido": "Sánchez",
+  "email": "carmen.sanchez@email.com",
+  "telefono": "444555666",
+  "activo": true
+}
+
+### ❌ EJEMPLOS DE ERRORES - Registros Inválidos
+
+### Error 1: Email inválido
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "email-invalido",
+  "telefono": "123456789",
+  "activo": true
+}
+
+### Error 2: Teléfono con letras
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan@email.com",
+  "telefono": "123abc456",
+  "activo": true
+}
+
+### Error 3: Nombre muy corto
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "J",
+  "apellido": "Pérez",
+  "email": "juan@email.com",
+  "telefono": "123456789",
+  "activo": true
+}
+
+### Error 4: Email faltante (campo requerido)
+POST {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "telefono": "123456789",
+  "activo": true
+}
+
+### 📄 EJEMPLOS DE PAGINACIÓN
+
+### Obtener contactos paginados (página 1, 3 registros por página)
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=1&registrosPorPagina=3
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Obtener contactos paginados (página 2, 2 registros por página)
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=2&registrosPorPagina=2
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Obtener contactos paginados (página 1, 10 registros por página - por defecto)
+GET {{ContactosApi_HostAddress}}/api/contactos
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Obtener TODOS los contactos sin paginación
+GET {{ContactosApi_HostAddress}}/api/contactos/todos
+Authorization: Bearer TU_TOKEN_AQUI
+
+### ❌ EJEMPLOS DE ERRORES - Parámetros Numéricos Inválidos
+
+### Error: ID negativo
+GET {{ContactosApi_HostAddress}}/api/contactos/-1
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: ID con letras
+GET {{ContactosApi_HostAddress}}/api/contactos/abc
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: ID con caracteres especiales
+GET {{ContactosApi_HostAddress}}/api/contactos/1@3
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: Página negativa
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=-1&registrosPorPagina=5
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: Registros por página con letras
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=1&registrosPorPagina=abc
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: Registros por página muy alto
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=1&registrosPorPagina=100
+Authorization: Bearer TU_TOKEN_AQUI
+
+### Error: Página con caracteres especiales
+GET {{ContactosApi_HostAddress}}/api/contactos?pagina=1@2&registrosPorPagina=5
+Authorization: Bearer TU_TOKEN_AQUI
+
 ###

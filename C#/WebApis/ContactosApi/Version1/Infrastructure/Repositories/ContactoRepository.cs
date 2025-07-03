@@ -23,12 +23,12 @@ public class ContactoRepository : IContactoRepository
 
     public async Task<IEnumerable<Contacto>> GetAllAsync()
     {
-        return await _context.Contactos.ToListAsync();
+        return await _context.Contactos.Where(c => c.Activo).ToListAsync();
     }
 
     public async Task<Contacto?> GetByIdAsync(int id)
     {
-        return await _context.Contactos.FindAsync(id);
+        return await _context.Contactos.FirstOrDefaultAsync(c => c.Id == id && c.Activo);
     }
 
     public async Task<bool> UpdateAsync(Contacto contacto)
@@ -44,7 +44,7 @@ public class ContactoRepository : IContactoRepository
         if (contacto == null)
             return false;
 
-        _context.Contactos.Remove(contacto);
+        contacto.Activo = false;
         var result = await _context.SaveChangesAsync();
         return result > 0;
     }
