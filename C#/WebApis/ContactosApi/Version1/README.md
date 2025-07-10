@@ -13,15 +13,194 @@
 
 **Describe aquí la problemática o el dominio de la API.**
 
-_Ejemplo: "Necesito una WebAPI para gestionar una biblioteca de libros, autores y préstamos, con autenticación de usuarios y roles de administrador y usuario."_
+* Problemática: 
+Estoy desarrollando una aplicación web que actualmente funciona con almacenamiento en localStorage, pero necesito llevar esa lógica a un entorno más robusto y escalable mediante una base de datos relacional.
+
+El flujo del usuario incluye autenticación, navegación por módulos de inteligencia artificial, toma de apuntes, participación en retos, seguimiento de progreso, logros, ranking y eventualmente funciones comunitarias. Dado que la aplicación está creciendo y planeo conectarla a una WebAPI en .NET 9 con Swagger, necesito estructurar correctamente la base de datos desde ahora.
+
+Por lo tanto, ya realicé un análisis completo de la app y con base en eso, necesito que definas la estructura de la base de datos: tablas, atributos, tipos de datos y relaciones. A continuación te comparto toda la información organizada por secciones, flujo de datos, estructuras utilizadas y propuesta inicial de tablas:
+
+### 1. Secciones o módulos funcionales de la app
+
+**A. Autenticación y Registro**
+- **Pantallas:** Login (inicio de sesión), Registro, Mensajes de bienvenida.
+- **Flujo:** El usuario puede iniciar sesión o registrarse. Tras el registro, se le solicita completar su perfil.
+
+**B. Perfil de Usuario**
+- **Pantallas:** Formulario de perfil (`profile-form.html`), Modal de perfil en el dashboard.
+- **Flujo:** El usuario completa o edita su perfil con nivel de estudios, carrera, objetivos y tiempo de estudio.
+
+**C. Dashboard Principal**
+- **Pantallas:** Dashboard (`Dashboard.html`), con navegación lateral (sidebar).
+- **Secciones del Dashboard:**
+  - **Inicio:** Bienvenida y resumen del usuario.
+  - **Cursos/Módulos:** Listado de módulos de IA, progreso, actividades, historial.
+  - **Apuntes:** Gestión de notas personales.
+  - **Retos:** Retos diarios, con actividades y posibles entregas.
+  - **Comunidad:** Foros, ranking, interacción con otros usuarios.
+  - **Premium:** Información y gestión de planes premium.
+  - **Configuración:** (Placeholder, no funcionalidad detallada aún).
+
+---
+
+### 2. Datos que intervienen en cada parte del flujo
+
+**A. Autenticación y Registro**
+- **Login:** email, password.
+- **Registro:** name, email, password.
+- **Datos guardados:** `userData` en localStorage (name, email, loginTime/registerTime).
+
+**B. Perfil de Usuario**
+- **Formulario:** educationLevel, career (si universidad), objectives, studyTime.
+- **Datos guardados:** Se agregan a `userData` en localStorage (profileCompleted, profileCompletedAt).
+
+**C. Dashboard**
+- **Usuario:** name, email, educationLevel, career, objectives, studyTime.
+- **Módulos:** id, icon, title, number, description, objective, content, activity, duration, difficulty, status, progress, timeSpent, score, lastActivity, history.
+- **Notas:** Array de notas por usuario (`notes_{email}` en localStorage).
+- **Retos:** Array de retos predefinidos (título, descripción, si requiere upload).
+- **Ranking:** Datos de usuarios (position, name, email, level, points, modules, achievements, time, avatar, isFriend).
+- **Logros:** Derivados del progreso en módulos.
+
+---
+
+### 3. Formularios, componentes, servicios, objetos o estructuras
+
+- **Formularios:** Login, Registro, Perfil, Notas (crear/editar), posiblemente retos (entrega).
+- **Componentes:** Sidebar de navegación, cards de módulos, cards de precios, modales (perfil, retos).
+- **Estructuras de datos:**
+  - `userData` (objeto usuario)
+  - `modulesData` (array de módulos)
+  - `notes_{email}` (array de notas)
+  - `retosPredefinidos` (array de retos)
+  - `rankingData` (objetos de ranking global, amigos, universidad, región)
+
+---
+
+### 4. Eventos clave que cambian el estado o generan datos
+
+- **Login/Registro:** Guarda usuario en localStorage, redirige a dashboard o perfil.
+- **Completar/editar perfil:** Actualiza `userData`, redirige a dashboard.
+- **Navegación:** Cambia la sección visible en el dashboard.
+- **Progreso en módulos:** Cambia estado, progreso, historial y logros.
+- **Notas:** Crear, editar, eliminar notas (actualiza localStorage).
+- **Retos:** Completar retos, subir archivos (no implementado, pero previsto).
+- **Ranking:** Cambia según progreso y logros.
+- **Premium:** Cambio de plan (no implementado, pero previsto).
+
+---
+
+## Propuesta de tablas y atributos para la base de datos
+
+### 1. Usuarios (`Users`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| Name            | string       | Nombre del usuario                          |
+| Email           | string (UK)  | Correo electrónico                          |
+| PasswordHash    | string       | Hash de la contraseña                       |
+| RegisterTime    | datetime     | Fecha de registro                           |
+| LoginTime       | datetime     | Último inicio de sesión                     |
+| ProfileCompleted| bool         | Si completó el perfil                       |
+| ProfileCompletedAt | datetime  | Fecha de completar perfil                   |
+
+### 2. Perfiles de Usuario (`UserProfiles`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| UserId          | int (FK)     | Relación con Usuarios                       |
+| EducationLevel  | string       | Nivel de estudios                           |
+| Career          | string/null  | Carrera (si aplica)                         |
+| Objectives      | string       | Objetivos de aprendizaje                    |
+| StudyTime       | string       | Tiempo disponible para estudio              |
+
+### 3. Módulos de IA (`Modules`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| Icon            | string       | Icono                                       |
+| Title           | string       | Título                                      |
+| Number          | string       | Número de módulo                            |
+| Description     | string       | Descripción                                 |
+| Objective       | string       | Objetivo                                    |
+| Content         | string       | Contenido                                   |
+| Activity        | string       | Actividad principal                         |
+| Duration        | string       | Duración estimada                           |
+| Difficulty      | string       | Dificultad                                  |
+
+### 4. Progreso de Módulos por Usuario (`UserModules`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| UserId          | int (FK)     | Relación con Usuarios                       |
+| ModuleId        | int (FK)     | Relación con Módulos                        |
+| Status          | string       | Estado: not-started, in-progress, completed |
+| Progress        | int          | Porcentaje completado                       |
+| TimeSpent       | float        | Horas invertidas                            |
+| Score           | int          | Puntuación                                  |
+| LastActivity    | datetime     | Última actividad                            |
+
+### 5. Historial de Actividades en Módulos (`ModuleHistory`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| UserModuleId    | int (FK)     | Relación con UserModules                    |
+| Action          | string       | Acción realizada                            |
+| Date            | datetime     | Fecha de la acción                          |
+| Score           | int          | Puntuación obtenida (si aplica)             |
+
+### 6. Notas de Usuario (`Notes`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| UserId          | int (FK)     | Relación con Usuarios                       |
+| Content         | string       | Contenido de la nota                        |
+| CreatedAt       | datetime     | Fecha de creación                           |
+| UpdatedAt       | datetime     | Fecha de última actualización               |
+
+### 7. Retos Diarios (`Challenges`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| Title           | string       | Título del reto                             |
+| Description     | string       | Descripción                                 |
+| RequiresUpload  | bool         | Si requiere entrega de archivo              |
+
+### 8. Participación en Retos (`UserChallenges`)
+| Campo           | Tipo         | Descripción                                 |
+|-----------------|--------------|---------------------------------------------|
+| Id              | int (PK)     | Identificador único                         |
+| UserId          | int (FK)     | Relación con Usuarios                       |
+| ChallengeId     | int (FK)     | Relación con Retos                          |
+| Status          | string       | Estado: not-started, in-progress, completed |
+| Submission      | string/null  | URL o referencia a entrega                  |
+| Score           | int/null     | Puntuación (si aplica)                      |
+| CompletedAt     | datetime     | Fecha de finalización                       |
+
+### 9. Ranking y Logros (`Ranking`, `Achievements`)
+- **Ranking:** Puede calcularse dinámicamente, pero si se almacena:
+  - UserId, Points, Level, ModulesCompleted, TimeSpent, Position, etc.
+- **Achievements:** 
+  - Id, UserId, Name, Description, DateAwarded
+
+### 10. Comunidad (Foros, Proyectos, etc.) *(Futuro)*
+- **Foros:** Topics, Posts, UserId, Fecha, etc.
+- **Galería de Proyectos:** ProjectId, UserId, Title, Description, Feedback, etc.
+
+---
+
+## Resumen
+
+- El flujo principal es: **Login/Registro → Completar Perfil → Dashboard (Navegación entre módulos, apuntes, retos, comunidad, premium) → Progreso y logros**.
+- Los datos clave giran en torno a **usuarios, perfiles, módulos, progreso, notas, retos, ranking y logros**.
+- La estructura propuesta de tablas cubre todos los datos manipulados y visualizados en la app actual, y es extensible para futuras funcionalidades (comunidad, premium, etc.).
+
 
 ---
 
 ### REQUISITOS GENERALES
 
-- Crea una WebAPI en C# (.NET 9+) siguiendo Clean Architecture (carpetas: Core, Application, Infrastructure, Presentation).
-- Usa Entity Framework Core y MySQL (Pomelo).
-- Implementa autenticación JWT (register, login, refresh token opcional).
+- Usa Entity Framework Core y MySQL ().
+- Implementa autenticación JWT (register y login).
 - Incluye paginación y filtros en los endpoints de listado.
 - Valida atributos de entidades y DTOs (ej: Required, StringLength, Email, etc.).
 - Implementa migraciones y comandos para crearlas/aplicarlas.
